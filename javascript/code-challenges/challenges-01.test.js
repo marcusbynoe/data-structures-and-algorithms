@@ -107,7 +107,7 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  for(let i = 0; i < times; i++){
+  for (let i = 0; i < times; i++) {
     callback(arr, num);
   }
   return arr;
@@ -135,8 +135,8 @@ const createList = (availableItems) => {
   // Solution code here...
   let listArr = [];
 
-  availableItems.forEach((item)=> {
-    if(item.available){
+  availableItems.forEach((item) => {
+    if (item.available) {
       listArr.push(item.name);
     }
   });
