@@ -51,10 +51,8 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
-  let numbers = [8, 3, 2, 9, 12, 1, 115];
-  numbers.sort((a, b) => (a - b));
-  console.log(numbers);
-  return arr.sort();
+  return arr.sort((a, b) => (a - b));
+
 
 };
 
@@ -68,10 +66,7 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
-  let numbers = [3, 4, 5, 6, 7];
-  numbers.sort((a, b) => (b - a));
-  console.log(numbers);
-  return arr;
+  return arr.sort((a, b) => (b - a));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,13 +80,6 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
-  let words = ['Alphabet', 'carrot', 'alphabet', 'Zebra'];
-  words.sort((a, b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1);
-
-
-  console.log(words);
-
   return arr.sort();
 };
 
@@ -110,27 +98,7 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
-  let item = [
-    {
-      name: 'Sweatshirt',
-      price: 45
-    },
-    {
-      name: 'Bookmark',
-      price: 2.50
-    },
-    {
-      name: 'Tote bag',
-      price: 15
-    }
-  ];
-
-  item.sort((a, b) => a.price - b.price);
-
-  console.log(item);
-  return arr.sort();
-
-
+  return arr.sort((a, b) => a.price - b.price);
 };
 
 /* ------------------------------------------------------------------------------------------------
