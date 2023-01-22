@@ -10,6 +10,7 @@ E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
   // Solution code here...
+  return arr.reduce((min, max) => max > min ? max : min);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,7 +20,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
@@ -63,6 +65,11 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  const numArr = [];
+  for (let name in obj) {
+    numArr.push(`${name}: ${obj[name]}`);
+  }
+  return numArr;
 };
 
 
@@ -119,6 +126,7 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.map(name => houses.push(name.house));
   return houses;
 };
 
@@ -136,6 +144,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  return arr.map(person => {
+    if (Object.values(person).includes(character)) {
+      return `children` in person;
+    }
+  }).filter(result => result !== undefined)[0];
 
 };
 
