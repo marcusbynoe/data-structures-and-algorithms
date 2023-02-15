@@ -160,7 +160,24 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  const row1 = board[0];
+  const row2 = board[1];
+  const row3 = board[2];
+  const col1 = [row1[0], row2[0], row3[0]];
+  const col2 = [row1[1], row2[1], row3[1]];
+  const col3 = [row1[2], row2[2], row3[2]];
+  const diagonal1 = [col1[0], col2[1], col3[2]];
+  const diagonal2 = [col3[0], col2[1], col1[2]];
+  const winningCombos = [row1, row2, row3, col1, col2, col3, diagonal1, diagonal2];
+  for (let combo of winningCombos){
+    if (combo[0] === ''){
+      continue;
+    } else if (combo[0] === combo [1] && combo [0] === combo [2]) {
+      return true;
+    }
+  } return false;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
